@@ -1,0 +1,7 @@
+# Private inputs: never commit these in plaintext.
+profile.json
+profile.key
+image.png
+private/
+*.docx
+*.pdf

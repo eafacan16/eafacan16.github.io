@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Psikoloji mezunu özgeçmişi.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#f4f1ec">
+  <title>Özgeçmiş</title>
+  <link rel="stylesheet" href="styles.css?v=acaf1e5fcd">
+  <script src="vendor/qrcode.min.js" defer></script>
+  <script src="public.js?v=c81d8abb57" defer></script>
+  <script src="data.js?v=ce997511db" defer></script>
+  <script src="app.js?v=5c8b159cad" defer></script>
+</head>
+<body>
+  <div id="app" class="app">
+    <div class="toolbar">
+      <span class="brand" id="brand"></span>
+      <span class="tier-pill" id="tier-pill"><i></i><b></b></span>
+      <div class="toolbar-actions">
+        <div class="lang-switch" role="group" aria-label="Dil / Language"><button type="button" data-lang="tr">TR</button><button type="button" data-lang="en">EN</button></div>
+        <details class="export-menu" id="export-menu">
+          <summary class="button dark"><i data-i18n="download"></i> <span>↓</span></summary>
+          <div class="export-list">
+            <button type="button" data-export="pdf"><b>PDF</b><small data-i18n="pdfHint"></small></button>
+            <button type="button" data-export="docx"><b>Word (.docx)</b><small data-i18n="docxHint"></small></button>
+            <button type="button" data-export="png"><b>PNG</b><small data-i18n="pngHint"></small></button>
+            <button type="button" data-export="txt"><b data-i18n="txt"></b><small data-i18n="txtHint"></small></button>
+          </div>
+        </details>
+        <button class="button ghost" id="copy-link" type="button" data-i18n="copy"></button>
+        <button class="button ghost" id="open-unlock" type="button"><span>✳</span> <i data-i18n="unlockOpen"></i></button>
+      </div>
+    </div>
+
+    <section class="unlock-panel" id="unlock-panel" hidden>
+      <h2 data-i18n="unlockTitle"></h2>
+      <p data-i18n="unlockCopy"></p>
+      <form id="unlock-form" class="unlock-form">
+        <label for="unlock-key" data-i18n="unlockLabel"></label>
+        <div class="input-row"><input id="unlock-key" name="key" autocomplete="off" spellcheck="false" placeholder="https://…/#…" required><button class="button dark" type="submit"><i data-i18n="unlockButton"></i> <span>↗</span></button></div>
+        <p class="error" id="unlock-error" role="alert" hidden></p>
+      </form>
+    </section>
+
+    <article class="cv" id="cv">
+      <aside class="cv-side">
+        <div class="photo" id="photo"></div>
+        <section class="side-block">
+          <h2 data-i18n="contact"></h2>
+          <ul class="contact-list" id="contact-list"></ul>
+        </section>
+        <section class="side-block" id="personal-block">
+          <h2 data-i18n="personal"></h2>
+          <ul class="contact-list" id="personal-list"></ul>
+        </section>
+        <section class="side-block" id="skills-block">
+          <h2 data-i18n="skills"></h2>
+          <ul class="tag-list" id="skills"></ul>
+        </section>
+        <section class="side-block" id="languages-block">
+          <h2 data-i18n="languages"></h2>
+          <ul class="contact-list" id="languages"></ul>
+        </section>
+        <section class="side-block qr-block">
+          <div class="qr" id="qr" role="img" aria-label="QR"></div>
+          <p data-i18n="qr"></p>
+        </section>
+      </aside>
+
+      <div class="cv-main">
+        <header class="cv-head">
+          <h1 id="name"></h1>
+          <p class="cv-title" id="title"></p>
+        </header>
+        <section class="cv-section" id="summary-block">
+          <h2><span></span><i data-i18n="summary"></i></h2>
+          <p id="summary"></p>
+        </section>
+        <section class="cv-section" id="experience-block">
+          <h2><span></span><i data-i18n="experience"></i></h2>
+          <div class="entries" id="experience"></div>
+        </section>
+        <section class="cv-section" id="education-block">
+          <h2><span></span><i data-i18n="education"></i></h2>
+          <div class="entries" id="education"></div>
+        </section>
+        <section class="cv-section" id="certifications-block">
+          <h2><span></span><i data-i18n="certifications"></i></h2>
+          <div class="entries" id="certifications"></div>
+        </section>
+        <section class="cv-section" id="career-block">
+          <h2><span></span><i data-i18n="career"></i></h2>
+          <div class="career-grid" id="career"></div>
+        </section>
+        <section class="cv-section" id="interests-block">
+          <h2><span></span><i data-i18n="interests"></i></h2>
+          <ul class="tag-list light" id="interests"></ul>
+        </section>
+      </div>
+    </article>
+
+    <p class="app-foot" id="foot"></p>
+  </div>
+</body>
+</html>

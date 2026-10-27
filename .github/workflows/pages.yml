@@ -1,0 +1,36 @@
+name: Publish encrypted CV to GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Assemble public shell and encrypted payload
+        run: |
+          for f in public.js data.js; do test -s $f || { echo "$f missing: run node tools/build.mjs locally"; exit 1; }; done
+          mkdir -p _site/vendor
+          cp index.html styles.css app.js public.js data.js robots.txt .nojekyll _site/
+          cp vendor/qrcode.min.js vendor/docx.umd.js _site/vendor/
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site/
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

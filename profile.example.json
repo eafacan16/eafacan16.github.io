@@ -1,0 +1,29 @@
+{
+  "private": ["photo", "phone", "email", "birthDate", "birthPlace", "address"],
+  "siteUrl": "https://eafacan16.github.io/",
+  "name": "Ad Soyad",
+  "title": "Psikoloji Mezunu",
+  "photo": "private/foto.jpg",
+  "city": "Şehir",
+  "email": "ornek@example.com",
+  "phone": "+90 5xx xxx xx xx",
+  "birthDate": "GG.AA.YYYY",
+  "birthPlace": "Şehir",
+  "address": "Mahalle, İlçe / Şehir",
+  "github": "https://github.com/kullanici",
+  "summary": "Kısa profil yazısı.",
+  "experience": [
+    { "period": "2023 — 2024", "title": "Stajyer Psikolog", "place": "Kurum adı", "note": "Kısa açıklama" }
+  ],
+  "education": [
+    { "period": "2018 — 2022", "title": "Psikoloji Lisans", "place": "Üniversite", "note": "Bölüm · Mezuniyet yılı" }
+  ],
+  "certifications": [
+    { "title": "Sertifika adı", "note": "Kısa açıklama" }
+  ],
+  "skills": ["Yetkinlik"],
+  "interests": ["İlgi alanı"],
+  "languages": [
+    { "name": "İngilizce", "level": "B2" }
+  ]
+}
